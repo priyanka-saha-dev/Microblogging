@@ -1,5 +1,6 @@
 package com.demo.entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,16 +36,16 @@ public class Tweet {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "TWEET_RELATIONS",
-            joinColumns = @JoinColumn(name = "LIKED_BY_ID"),
-            inverseJoinColumns = @JoinColumn(name = "TWEET_ID")
+            joinColumns = @JoinColumn(name = "LIKED_BY_ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "TWEET_ID", nullable = false)
     )
     private Set<Blogger> likedBy = new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "TWEET_RELATIONS",
-            joinColumns = @JoinColumn(name = "RETWEET_ID"),
-            inverseJoinColumns = @JoinColumn(name = "TWEET_ID")
+            joinColumns = @JoinColumn(name = "RETWEET_ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "TWEET_ID", nullable = false)
     )
     private Set<Blogger> retweetedBy = new HashSet<>();
 

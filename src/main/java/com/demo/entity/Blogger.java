@@ -25,16 +25,16 @@ public class Blogger {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "BLOGGER_RELATIONS",
-            joinColumns = @JoinColumn(name = "FOLLOWER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "BLOGGER_ID")
+            joinColumns = @JoinColumn(name = "FOLLOWER_ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "BLOGGER_ID", nullable = false)
     )
     private Set<Blogger> followers = new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "BLOGGER_RELATIONS",
-            joinColumns = @JoinColumn(name = "FOLLOWEE_ID"),
-            inverseJoinColumns = @JoinColumn(name = "BLOGGER_ID")
+            joinColumns = @JoinColumn(name = "FOLLOWEE_ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "BLOGGER_ID", nullable = false)
     )
     private Set<Blogger> followees = new HashSet<>();
 

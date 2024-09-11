@@ -23,8 +23,13 @@ public class TweetController {
         this.bloggerService = bloggerService;
     }
 
-    @PostMapping("/{username}/post")
-    public ResponseEntity<Tweet> postTweet(@PathVariable String username, @RequestBody TweetRequest tweetRequest) {
+    @PostMapping(
+            value = "/{username}/post",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+    public ResponseEntity<Tweet> postTweet(@PathVariable(value = "username") String username,
+                                           @RequestBody TweetRequest tweetRequest) {
         Optional<Blogger> blogger = bloggerService.findUserByUsername(username);
         if(blogger.isPresent()) {
             Tweet tweet = tweetService.postTweet(blogger.get(), tweetRequest.getContent());
@@ -33,8 +38,11 @@ public class TweetController {
         return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/{username}/timeline")
-    public ResponseEntity<List<Tweet>> getTimeline(@PathVariable String username) {
+    @GetMapping(
+            value = "/{username}/timeline",
+            produces = "application/json"
+    )
+    public ResponseEntity<List<Tweet>> getTimeline(@PathVariable(value = "username") String username) {
         Optional<Blogger> blogger = bloggerService.findUserByUsername(username);
         if(blogger.isPresent()) {
             List<Tweet> tweets = tweetService.getTimeline(blogger.get());
@@ -43,8 +51,13 @@ public class TweetController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping("/{tweetId}/like")
-    public ResponseEntity<String> likeTweet(@PathVariable Long tweetId, @RequestParam String username) {
+    @PostMapping(
+            value = "/{tweetId}/like",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+    public ResponseEntity<String> likeTweet(@PathVariable(value = "tweetId") Long tweetId,
+                                            @RequestParam(value = "username") String username) {
         Optional<Blogger> blogger = bloggerService.findUserByUsername(username);
         Optional<Tweet> tweet = tweetService.findTweetById(tweetId);
         if(blogger.isPresent() && tweet.isPresent()) {
@@ -54,8 +67,13 @@ public class TweetController {
         return ResponseEntity.badRequest().build();
     }
 
-    @PostMapping("/{tweetId}/retweet")
-    public ResponseEntity<String> retweet(@PathVariable Long tweetId, @RequestParam String username) {
+    @PostMapping(
+            value = "/{tweetId}/retweet",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+    public ResponseEntity<String> retweet(@PathVariable(value = "tweetId") Long tweetId,
+                                          @RequestParam(value = "username") String username) {
 
         Optional<Blogger> blogger = bloggerService.findUserByUsername(username);
         Optional<Tweet> tweet = tweetService.findTweetById(tweetId);

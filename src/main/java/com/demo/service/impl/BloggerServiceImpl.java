@@ -3,6 +3,7 @@ package com.demo.service.impl;
 import com.demo.entity.Blogger;
 import com.demo.repository.BloggerJpaRepository;
 import com.demo.service.BloggerService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -11,16 +12,18 @@ import java.util.Optional;
 public class BloggerServiceImpl implements BloggerService {
 
     private final BloggerJpaRepository bloggerJpaRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public BloggerServiceImpl(BloggerJpaRepository bloggerJpaRepository) {
+    public BloggerServiceImpl(BloggerJpaRepository bloggerJpaRepository, PasswordEncoder passwordEncoder) {
         this.bloggerJpaRepository = bloggerJpaRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public Blogger registerUser(String username, String password) {
         Blogger blogger = Blogger.builder()
                 .username(username)
-                .password(password)
+                .password(passwordEncoder.encode(password))
                 .build();
         return bloggerJpaRepository.saveAndFlush(blogger);
     }

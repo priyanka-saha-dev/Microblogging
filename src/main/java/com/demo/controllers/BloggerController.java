@@ -33,7 +33,8 @@ public class BloggerController {
             consumes = "application/json",
             produces = "application/json"
     )
-    public ResponseEntity<String> followUser(@PathVariable(value = "username") String username, @RequestParam String followeeUsername) {
+    public ResponseEntity<String> followUser(@PathVariable(value = "username") String username,
+                                             @RequestParam(value = "followeeUsername") String followeeUsername) {
         Optional<Blogger> follower = bloggerService.findUserByUsername(username);
         Optional<Blogger> followee = bloggerService.findUserByUsername(followeeUsername);
 
@@ -45,8 +46,13 @@ public class BloggerController {
         return ResponseEntity.badRequest().build();
     }
 
-    @PostMapping("/{id}/unfollow")
-    public ResponseEntity<String> unfollowUser(@PathVariable(value = "username") String username, @RequestParam String followeeUsername) {
+    @PostMapping(
+            value = "/{username}/unfollow",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+    public ResponseEntity<String> unfollowUser(@PathVariable(value = "username") String username,
+                                               @RequestParam(value = "followeeUsername")  String followeeUsername) {
         Optional<Blogger> follower = bloggerService.findUserByUsername(username);
         Optional<Blogger> followee = bloggerService.findUserByUsername(followeeUsername);
 
