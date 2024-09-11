@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26080156-ecfe-4652-91bf-b6aad2c02832" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/CustomUserDetailsService.java" afterDir="false" />
+    <list default="true" id="26080156-ecfe-4652-91bf-b6aad2c02832" name="Changes" comment="Update with Spring security">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/config/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/controllers/BloggerRegistrationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/filter/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/BloggerAuthResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controllers/BloggerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controllers/BloggerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controllers/TweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controllers/TweetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/entity/Blogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/entity/Blogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/entity/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/entity/Tweet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/BloggerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/BloggerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/CustomUserDetailsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +61,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.demo.model" />
       <recent name="com.demo.controllers" />
+      <recent name="com.demo.model" />
       <recent name="com.demo.service.impl" />
       <recent name="com.demo.service" />
       <recent name="com.demo.repository" />
@@ -112,12 +113,21 @@
       <option name="project" value="LOCAL" />
       <updated>1726029321324</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update with Spring security">
+      <option name="closed" value="true" />
+      <created>1726069012680</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726069012680</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Update with Spring security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update with Spring security" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

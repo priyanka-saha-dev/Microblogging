@@ -1,7 +1,6 @@
 package com.demo.controllers;
 
 import com.demo.entity.Blogger;
-import com.demo.model.BloggerRegistrationRequest;
 import com.demo.service.BloggerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,18 +13,9 @@ public class BloggerController {
 
     private final BloggerService bloggerService;
 
+
     public BloggerController(BloggerService bloggerService) {
         this.bloggerService = bloggerService;
-    }
-
-    @PostMapping(
-            value = "/register",
-            consumes = "application/json",
-            produces = "application/json"
-    )
-    public ResponseEntity<Blogger> registerUser(@RequestBody BloggerRegistrationRequest bloggerRegistrationRequest) {
-        Blogger blogger = bloggerService.registerUser(bloggerRegistrationRequest.getUsername(), bloggerRegistrationRequest.getPassword());
-        return ResponseEntity.ok(blogger);
     }
 
     @PostMapping(
