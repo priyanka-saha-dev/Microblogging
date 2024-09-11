@@ -1,4 +1,4 @@
-**MVP key features :**
+**MVP key features**
 -  User registration and login.
 -  Posting tweets.
 -  Following/unfollowing users.
@@ -11,3 +11,10 @@
 - Database: H2 for development, MySQL/PostgreSQL for production.
 - Messaging: Kafka for real-time feeds (optional in this version).
 - Security: Basic authentication (for MVP).
+
+**Possible extensions**
+- Implementing pagination for the timeline.
+- Adding commenting on tweets.
+- Introducing real-time updates using WebSockets or Kafka.
+- Enhancing security with JWT tokens or OAuth2 authentication.
+- Adding a frontend using frameworks like React or Angular.
