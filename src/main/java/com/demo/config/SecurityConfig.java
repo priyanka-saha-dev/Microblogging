@@ -18,26 +18,18 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http
-////                .csrf().disable()
-//                .authorizeRequests()
-//                .requestMatchers("/users/register").permitAll()  // Allow user registration without authentication
-//                .anyRequest().authenticated() ;             // All other requests require authentication
-//                //.and()
-//                //.httpBasic(httpSecurityHttpBasicConfigurer -> httpSecurityHttpBasicConfigurer.);  // Use Basic Authentication
-//        return http.build();
 
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/bloggers/register").permitAll()
-                        .requestMatchers("/h2-console/**").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-                .httpBasic(Customizer.withDefaults())
+                .sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
+                        authorizationManagerRequestMatcherRegistry
+                                .requestMatchers("/bloggers/register").permitAll()
+                                .requestMatchers("/h2-console/**").permitAll()
+                                .anyRequest().authenticated()
+                ).httpBasic(Customizer.withDefaults())
+//                .oauth2ResourceServer(config -> config.jwt(Customizer.withDefaults()))
                 .build();
 
     }
