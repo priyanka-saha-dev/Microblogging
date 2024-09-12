@@ -2,6 +2,7 @@ package com.demo.service;
 
 import com.demo.entity.Blogger;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface BloggerService {
@@ -13,5 +14,7 @@ public interface BloggerService {
     void followUser(Blogger follower, Blogger followee);
 
     void unfollowUser(Blogger follower, Blogger followee);
+
+    List<Blogger> findAllBloggers();
 
 }

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26080156-ecfe-4652-91bf-b6aad2c02832" name="Changes" comment="Update with Spring security">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/config/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/controllers/BloggerRegistrationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/filter/JwtRequestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/BloggerAuthResponse.java" afterDir="false" />
+    <list default="true" id="26080156-ecfe-4652-91bf-b6aad2c02832" name="Changes" comment="/auth APIs to generate JWT Token">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controllers/BloggerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controllers/BloggerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/repository/BloggerJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/repository/BloggerJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/BloggerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/BloggerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/BloggerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/BloggerServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,13 +117,22 @@
       <option name="project" value="LOCAL" />
       <updated>1726069012680</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="/auth APIs to generate JWT Token">
+      <option name="closed" value="true" />
+      <created>1726082478085</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726082478085</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update" />
     <MESSAGE value="Update with Spring security" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update with Spring security" />
+    <MESSAGE value="/auth APIs to generate JWT Token" />
+    <option name="LAST_COMMIT_MESSAGE" value="/auth APIs to generate JWT Token" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

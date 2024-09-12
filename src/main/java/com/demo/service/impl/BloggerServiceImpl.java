@@ -3,9 +3,13 @@ package com.demo.service.impl;
 import com.demo.entity.Blogger;
 import com.demo.repository.BloggerJpaRepository;
 import com.demo.service.BloggerService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -48,5 +52,12 @@ public class BloggerServiceImpl implements BloggerService {
         followee.getFollowers().remove(follower);
         bloggerJpaRepository.saveAndFlush(follower);
         bloggerJpaRepository.saveAndFlush(followee);
+    }
+
+    @Override
+    public List<Blogger> findAllBloggers() {
+        PageRequest pageable = PageRequest.of(0, 20, Sort.by("username").ascending());
+        Page<Blogger> bloggers = this.bloggerJpaRepository.findAllBloggers(pageable);
+        return bloggers.getContent();
     }
 }
